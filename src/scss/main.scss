@@ -1,9 +1,3 @@
-@import './mixins/index.scss';
-
-header {
-    @include flex-align-center;
-}
-
-header {
-    @include flex-justify-center;
-}
+@import './mixins/_index.scss';
+@import './base/_index.scss';
+@import './globals/_index.scss';
