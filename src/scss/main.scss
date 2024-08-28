@@ -1,0 +1,9 @@
+@import './mixins/index.scss';
+
+header {
+    @include flex-align-center;
+}
+
+header {
+    @include flex-justify-center;
+}
