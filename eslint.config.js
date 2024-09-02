@@ -20,14 +20,14 @@ export default [
         },
     },
     pluginJs.configs.recommended,
-    {
-        plugins: {
-            prettier: prettierPlugin,
-        },
-        rules: {
-            ...eslintConfigPrettier.rules,
-        },
-    },
+    // {
+    //     plugins: {
+    //         prettier: prettierPlugin,
+    //     },
+    //     rules: {
+    //         ...eslintConfigPrettier.rules,
+    //     },
+    // },
     {
         files: ['.eslintrc.{js,cjs}'],
         languageOptions: {
