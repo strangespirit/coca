@@ -91,6 +91,10 @@
             letter-spacing: -0.03em;
             color: var(--neutral-color-100);
 
+            @include mini-desktop {
+                justify-content: center;
+            }
+
             @include tablet {
                 font-size: 28px;
             }

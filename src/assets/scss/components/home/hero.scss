@@ -8,7 +8,7 @@
 
     @include mobile {
         padding: 77px 15px;
-        min-height: calc(100dvh - 128px);
+        min-height: calc(100dvh - 109px);
     }
 
     &::before {
@@ -71,11 +71,8 @@
         }
     }
 
-    &__left {
-        max-width: 599px;
-    }
-
     &__title {
+        margin-bottom: 114px;
         font-weight: 700;
         font-size: 80px;
         line-height: 1.2;
@@ -187,12 +184,13 @@
     &__customer {
         position: absolute;
         top: -60px;
-        right: 140px;
+        right: -140px;
         display: inline-block;
         padding: 15px 18px;
 
         @include small-desktop {
-            top: -140px;
+            max-width: 180px;
+            top: -100px;
             right: -30px;
         }
 
@@ -238,11 +236,12 @@
 
         &-body {
 
-            &-th {
+            &-td {
                 font-weight: 700;
                 font-size: 20px;
                 line-height: 1.3;
                 color: #fff;
+                white-space: nowrap;
 
                 &:nth-child(1) {
                     padding-right: 80px;
@@ -262,7 +261,7 @@
                     &::before {
                         content: "";
                         display: inline-block;
-                        background: url('../../../icons/arrow-green.svg');
+                        background: url('./assets/icons/arrow-green.svg');
                         width: 12px;
                         height: 12px;
                     }
@@ -274,7 +273,7 @@
                     &::before {
                         content: "";
                         display: inline-block;
-                        background: url('../../../icons/red-arrow.svg');
+                        background: url('./assets/icons/arrow-red.svg');
                         width: 12px;
                         height: 12px;
                     }
