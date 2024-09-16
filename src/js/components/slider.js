@@ -5,8 +5,14 @@ export const useInsightSlider = () => {
     new Swiper('.insight__slider', {
         slidesPerView: 'auto',
         spaceBetween: 32,
-        loop: true,
+        // loop: true,
         centeredSlides: true,
+
+        scrollbar: {
+            el: '.swiper-scrollbar',
+            draggable: true,
+        },
+
         breakpoints: {
             993: {
                 centeredSlides: false,
