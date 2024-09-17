@@ -1,11 +1,12 @@
 import Swiper from 'swiper';
 import 'swiper/css';
+import { Scrollbar } from 'swiper/modules';
 
 export const useInsightSlider = () => {
     new Swiper('.insight__slider', {
+        modules: [Scrollbar],
         slidesPerView: 'auto',
         spaceBetween: 32,
-        // loop: true,
         centeredSlides: true,
 
         scrollbar: {
@@ -18,5 +19,13 @@ export const useInsightSlider = () => {
                 centeredSlides: false,
             },
         },
+    });
+};
+
+export const partnersSlider = () => {
+    new Swiper('.partners__slider', {
+        slidesPerView: 'auto',
+        spaceBetween: 32,
+        centeredSlides: true,
     });
 };

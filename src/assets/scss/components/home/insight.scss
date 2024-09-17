@@ -1,3 +1,5 @@
+@import 'swiper/scss/scrollbar';
+
 .insight {
     &__container {
         border-top: 1px solid var(--neutral-color-30);
@@ -44,29 +46,8 @@
     &__slider {
         position: relative;
 
-        &-btns {
-            @include flex-all-center;
-            position: absolute;
-            top: 126px;
-            left: 50%;
-            z-index: var(--z-index-2);
-            border-radius: 50%;
-            width: 80px;
-            height: 80px;
-            background-color: #fff;
-            transform: translateX(-50%);
-
-            @include tablet {
-                display: none;
-            }
-
-            @include small-mobile {
-                top: 80px;
-                left: 93%;
-                display: flex;
-                width: 50px;
-                height: 50px;
-            }
+        &-wrapper {
+            margin-bottom: 30px;
         }
     }
 
@@ -111,10 +92,9 @@
     }
 }
 
-.swiper-scrollbar {
-    width: 500px;
+.swiper-horizontal > .swiper-scrollbar, .swiper-scrollbar.swiper-scrollbar-horizontal {
     height: 10px;
     margin-top: 20px;
     cursor: pointer;
-    background: var(--neutral-color-150);
+    background: #bbb8b8;
 }
