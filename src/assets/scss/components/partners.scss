@@ -40,8 +40,15 @@
         gap: 10px 30px;
         flex-wrap: wrap;
 
+        // @include mobile {
+        //     gap: 10px;
+        // }
+
         @include mobile {
-            gap: 10px;
+            width: 0;
+            display: block;
+            display: none;
+            visibility: hidden;
         }
     }
 
@@ -51,5 +58,40 @@
         width: 160px;
         height: 90px;
         background-color: #fff;
+    }
+
+    &__slider {
+        width: 0;
+        display: block;
+        display: none;
+        visibility: hidden;
+
+        @include mobile {
+            width: 500px;
+            height: 100px;
+            padding: 20px;
+            display: block;
+            visibility: visible;
+        }
+    }
+
+    &__wrapper {
+        margin-top: 10px;
+    }
+
+    &__slide {
+        
+        &-img {
+            @include flex-all-center;
+            border-radius: 16px;
+            width: 110px;
+            height: 60px;
+            background-color: #fff;
+            padding: 10px 10px;
+
+            & img {
+                width: 100%;
+            }
+        }
     }
 }

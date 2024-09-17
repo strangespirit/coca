@@ -1,6 +1,7 @@
 import Swiper from 'swiper';
 import 'swiper/css';
 import { Scrollbar } from 'swiper/modules';
+import { Autoplay } from 'swiper/modules';
 
 export const useInsightSlider = () => {
     new Swiper('.insight__slider', {
@@ -22,10 +23,18 @@ export const useInsightSlider = () => {
     });
 };
 
-export const partnersSlider = () => {
+export const usePartnersSlider = () => {
     new Swiper('.partners__slider', {
-        slidesPerView: 'auto',
-        spaceBetween: 32,
+        modules: [Autoplay],
+        slidesPerView: 4,
+        spaceBetween: 80,
         centeredSlides: true,
+        loop: true,
+        autoplay: {
+            delay: 0,
+        },
+        speed: 2500,
+        reverseDirection: true,
+        allowTouchMove: false,
     });
 };
