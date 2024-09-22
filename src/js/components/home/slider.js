@@ -1,7 +1,7 @@
 import Swiper from 'swiper';
-import 'swiper/css';
-import { Scrollbar } from 'swiper/modules';
-import { Autoplay } from 'swiper/modules';
+import 'swiper/scss';
+import { Scrollbar, Autoplay, Navigation, EffectFade } from 'swiper/modules';
+
 
 export const useInsightSlider = () => {
     new Swiper('.insight__slider', {
@@ -36,5 +36,24 @@ export const usePartnersSlider = () => {
         speed: 2500,
         reverseDirection: true,
         allowTouchMove: false,
+    });
+};
+
+export const useTestimonialsSlider = () => {
+    new Swiper('.testimonials__slider', {
+        modules: [EffectFade, Navigation],
+        slidesPerView: 'auto',
+        spaceBetween: 22,
+        loop: true,
+
+        effect: 'fade',
+        fadeEffect: {
+            crossFade: true
+        },
+
+        navigation: {
+            prevEl: '.testimonials__btn--prev',
+            nextEl: '.testimonials__btn--next',
+        },
     });
 };

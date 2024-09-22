@@ -3,7 +3,9 @@ import { useTheme } from './components/theme.js';
 useTheme()
 import { useBurger } from './components/burger.js';
 useBurger();
-import { useInsightSlider } from './components/slider.js';
+import { useInsightSlider } from './components/home/slider.js';
 useInsightSlider();
-import { usePartnersSlider } from './components/slider.js';
+import { usePartnersSlider } from './components/home/slider.js';
 usePartnersSlider();
+import { useTestimonialsSlider } from './components/home/slider.js';
+useTestimonialsSlider();
