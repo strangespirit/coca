@@ -9,3 +9,5 @@ import { usePartnersSlider } from './components/home/slider.js';
 usePartnersSlider();
 import { useTestimonialsSlider } from './components/home/slider.js';
 useTestimonialsSlider();
+import { useAccordeon } from './components/accordeon.js';
+useAccordeon();

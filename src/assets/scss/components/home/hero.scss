@@ -7,8 +7,8 @@
     }
 
     @include mobile {
-        padding: 77px 15px;
-        min-height: calc(100dvh - 109px);
+        padding: 77px 15px 0 15px;
+        height: 550px;
     }
 
     &::before {
