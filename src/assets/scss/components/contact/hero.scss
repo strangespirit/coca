@@ -21,7 +21,7 @@
         }
     }
 
-    &__map {
+    &__container {
         @include flex-all-center-between;
         gap: 86px;
 
@@ -32,6 +32,11 @@
         @include mobile {
             gap: 36px;
         }
+    }
+
+    &__map {
+        width: 300px;
+        height: 300px;
     }
 
     &__contacts {
@@ -89,4 +94,13 @@
             }
         }
     }
+}
+
+// убрать знак копирайта на карте
+[class*="copyrights-pane"] {
+    display: none !important;
+}
+
+[class*="ground-pane"] {
+    filter: grayscale(1);
 }
