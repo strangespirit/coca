@@ -29,7 +29,6 @@
     },
     "dependencies": {
         "swiper": "^11.1.14",
-        "vite-plugin-html-inject": "^1.1.2",
-        "ymaps": "^0.2.1"
+        "vite-plugin-html-inject": "^1.1.2"
     }
 }

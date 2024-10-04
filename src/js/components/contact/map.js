@@ -1,31 +1,167 @@
-import ymaps3 from 'ymaps3';
+import mapMarkerIcon from '/assets/icons/map-marker.svg';
+export const useMap = () => {
+    const themeTarget = document.querySelector('[data-theme]');
+    const theme = localStorage.getItem('theme') || 'light';
 
-async function useMap() {
-    // ждем загрузку модуля
-    await ymaps3.ready;
-    const {YMap, YMapDefaultSchemeLayer} = ymaps3;
+    // получаем тему
+    const themeTargetDataset = themeTarget.dataset;
+    themeTargetDataset.theme = theme;
 
-    const map = new YMap(
-        document.getElementById('map'),
-        {
+    async function initMap() {
+        // ждем загрузки карты
+        await ymaps3.ready;
+
+        //  Основной объект карты, слой схемы карты, слой для добавления меток, объектов и др
+        const { YMap, YMapDefaultSchemeLayer, YMapDefaultFeaturesLayer } = ymaps3;
+
+        // инициализация карты
+        const map = new YMap(document.getElementById('map'), {
             location: {
-                center: [-23.615343366872768,135.9556315351218],
-                zoom: 3,
+                center: [110, 1],
+                zoom: 2,
+            },
+        });
+
+        // создаем слой для объектов
+        const featuresLayer = new YMapDefaultFeaturesLayer();
+        // добавлем его на карту
+        map.addChild(featuresLayer);
+
+        // создаем маркер
+        function addCustomMarker() {
+            // создаем контейнер для метки
+            const content = document.createElement('section');
+            const marker = new ymaps3.YMapMarker(
+                {
+                    coordinates: [130, -25],
+                    // маркер не может перетаскиваться
+                    draggable: false,
+                },
+                content,
+            );
+            // добавление маркера на карту
+            map.addChild(marker);
+            content.innerHTML = `<div class="hero__map-marker">
+      <div class="hero__map-marker-info">
+        <h4 class="hero__map-marker-title">Yogja, INA</h4>
+      </div>
+      <img class="hero__map-marker-icon" src="${mapMarkerIcon}" width="54" height="54" alt="marker in map" />
+      </div>`;
+        }
+
+        // создание темной темы
+        function layerDark() {
+            const layerDark = new YMapDefaultSchemeLayer({
+                customization: [
+                    {
+                        tags: {
+                            all: ['water'],
+                        },
+                        stylers: [
+                            {
+                                color: '#1d1e25',
+                            },
+                        ],
+                    },
+                    {
+                        elements: 'label',
+                        stylers: [
+                            {
+                                visibility: 'off',
+                            },
+                        ],
+                    },
+                    {
+                        tags: {
+                            all: ['landscape'],
+                        },
+                        stylers: [
+                            {
+                                color: '#acacb9',
+                            },
+                        ],
+                    },
+                ],
+            });
+            map.addChild(layerDark);
+            window.layerDark = layerDark;
+        }
+
+        function layerLight() {
+            const layerLight = new YMapDefaultSchemeLayer({
+                customization: [
+                    {
+                        tags: {
+                            all: ['water'],
+                        },
+                        stylers: [
+                            {
+                                color: '#FFF',
+                            },
+                        ],
+                    },
+                    {
+                        elements: 'label',
+                        stylers: [
+                            {
+                                visibility: 'off',
+                            },
+                        ],
+                    },
+                    {
+                        tags: {
+                            all: ['landscape'],
+                        },
+                        stylers: [
+                            {
+                                color: '#acacb9',
+                            },
+                        ],
+                    },
+                ],
+            });
+            map.addChild(layerLight);
+            window.layerLight = layerLight;
+        }
+
+        // удаление ранее добавленных слоев тем
+        function removeLayers() {
+            if (window.layerDark) {
+                map.removeChild(window.layerDark);
+                window.layerDark = null;
+            }
+            if (window.layerLight) {
+                map.removeChild(window.layerLight);
+                window.layerLight = null;
             }
         }
-    );
 
-    map.controls.remove('geolocationControl'); // удаление геолокации
-    map.controls.remove('searchControl'); // удаление поиска
-    map.controls.remove('trafficControl'); // удаление контроля трафика
-    map.controls.remove('typeSelector'); // удаление типа
-    map.controls.remove('fullscreenControl'); // удаление кнопки перехода в полноэкранный режим
-    map.controls.remove('zoomControl'); // удаление контрол зуммирования
-    map.controls.remove('rulerControl'); // удаление контрол правил
-    map.controls.remove('scrollZoom'); // отключаем скролл карты (опционально)
+        // смена темы карты в зависимости от переданного аргумента newTheme
+        function switchMapTheme(newTheme) {
+            removeLayers();
+            if (newTheme === 'dark') {
+                layerDark();
+            } else {
+                layerLight();
+            }
+        }
 
-    // Добавляем слой для отображения схематической карты
-    map.addChild(new YMapDefaultSchemeLayer());
-}
+        // проверка темы
+        if (theme === 'dark') {
+            layerDark();
+        } else {
+            layerLight();
+        }
 
-useMap();
+        // добавление маркера на карты
+        addCustomMarker();
+
+        // экспортируем ключевые объекты и функции для использования в других частях кода
+        window.YMapDefaultSchemeLayer = YMapDefaultSchemeLayer;
+        window.map = map;
+        window.removeLayers = removeLayers;
+        window.switchMapTheme = switchMapTheme;
+    }
+
+    initMap();
+};

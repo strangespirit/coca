@@ -8,5 +8,5 @@ import { usePartnersSlider } from './components/home/slider.js';
 usePartnersSlider();
 import { useAccordeon } from './components/accordeon.js';
 useAccordeon();
-// import { useMap } from './components/contact/map.js';
-// useMap();
+import { useMap } from './components/contact/map.js';
+useMap();
