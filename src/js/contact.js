@@ -10,3 +10,5 @@ import { useAccordeon } from './components/accordeon.js';
 useAccordeon();
 import { useMap } from './components/contact/map.js';
 useMap();
+import { usePhone } from './components/contact/phone.js';
+usePhone();

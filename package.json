@@ -28,6 +28,8 @@
         "vite-plugin-minify": "^2.0.0"
     },
     "dependencies": {
+        "inputmask": "^5.0.9",
+        "intl-tel-input": "^24.6.0",
         "swiper": "^11.1.14",
         "vite-plugin-html-inject": "^1.1.2"
     }
