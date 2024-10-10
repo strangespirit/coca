@@ -1,0 +1,199 @@
+.hero {
+    margin-bottom: 100px;
+
+    &-decor::before {
+        top: 1100px;
+        left: 244px;
+    }
+
+    &__container {
+        padding-right: 0;
+
+        @include small-desktop {
+            padding-right: 15px;
+        }
+
+        @include tablet {
+            padding-right: var(--container-padding);
+        }
+
+        @include small-tablet {
+            justify-content: center;
+        }
+    }
+
+    &__title {
+        margin-top: 105px;
+        max-width: 959px;
+
+        @include mobile {
+            margin-top: 55px;
+            text-align: center;
+        }
+    }
+
+    &__info {
+        margin-top: 118px;
+        @include flex-all-center-between;
+
+        @include small-tablet {
+            margin-top: 88px;
+        }
+
+        @include mobile {
+            margin-top: 58px;
+            text-align: center;
+        }
+    }
+
+    &__subtitle {
+        max-width: 738px;
+    }
+
+    &__icon {
+        margin-right: 100px;
+        margin-left: 30px;
+
+        @include small-tablet {
+            display: none;
+            visibility: hidden;
+        }
+
+        & path {
+            fill: var(--neutral-color-90);
+        }
+
+        & rect {
+            fill: var(--neutral-color-90);
+        }
+
+        & circle {
+            fill: var(--neutral-color-90);
+        }
+    }
+
+    &__gallery {
+        margin-top: 135px;
+        display: flex;
+        align-items: start;
+        gap: 32px;
+        max-height: 629px;
+        position: relative;
+        padding: 0 30px;
+
+        @include small-desktop {
+            @include flex-all-center-between;
+        }
+
+        @include mini-desktop {
+            @include flex-all-center;
+            margin-top: 50px;
+            max-height: 900px;
+            margin-top: 100px;
+        }
+
+        @include mobile {
+            margin-top: 75px;
+        }
+
+        &-item {
+
+            &-1 {
+
+                @include mini-desktop {
+                    display: none;
+                    visibility: hidden;
+                }
+            }
+
+            &-2 {
+                @include mini-desktop {
+                    max-width: 800px;
+                    width: 100%;
+                }
+            }
+
+            &-3 {
+
+                @include small-desktop {
+                    display: none;
+                    visibility: hidden;
+                }
+
+            }
+        }
+
+        &-img {
+
+            &-1 {
+                max-width: 502px;
+            }
+
+            &-2 {
+                max-width: 502px;
+
+                & img {
+                    width: 100%;
+                }
+
+                @include mini-desktop {
+                    max-width: 800px;
+                }
+            }
+
+            &-3 {
+                max-width: 252px;
+            }
+        }
+
+        &-descr {
+            @include flex-column;
+            max-width: 494px;
+
+            @include mini-desktop {
+                text-align: center;
+                align-items: center;
+                margin: auto;
+            }
+        }
+
+        &-title {
+            margin-top: 6px;
+            color: var(--neutral-color-100);
+            font-weight: 600;
+            letter-spacing: -0.32px;
+        }
+
+        &-text {
+            margin-top: 4px;
+            color: var(--neutral-color-150);
+            font-weight: 500;
+            line-height: 28px;
+        }
+
+        &-button {
+            margin-top: 10px;
+            background-color: var(--neutral-color-100);
+            color: var(--neutral-color-10);
+            display: flex;
+            width: 175px;
+            padding: 16px 32px;
+            justify-content: center;
+            align-items: center;
+
+            @include mini-desktop {
+                margin-top: 30px;
+            }
+        }
+
+    }
+}
+
+
+// .hero__icon {}
+// .hero__gallery-item {}
+// .hero__gallery-img {}
+// .hero__gallery-descr {}
+// .hero__gallery-title {}
+// .hero__gallery-text {}
+// .hero__gallery-button {}
