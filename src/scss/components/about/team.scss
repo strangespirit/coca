@@ -1,0 +1,136 @@
+@import 'swiper/scss/scrollbar';
+
+
+.team {
+    margin: 160px 0;
+
+    @include small-tablet {
+        margin: 120px 0;
+    }
+
+    @include mobile {
+        margin-bottom: 60px;
+    }
+
+    &__title {
+        max-width: 903px;
+        color: var(--neutral-color-100);
+        font-weight: 600;
+        line-height: 120%;
+        letter-spacing: -2px;
+
+        @include mobile {
+            text-align: center;
+        }
+    }
+
+    &__subtitle {
+        margin-top: 24px;
+        max-width: 534px;
+        color: var(--neutral-color-150);
+        font-weight: 500;
+        line-height: 32px;
+
+        @include mobile {
+            text-align: center;
+        }
+    }
+
+    &__slider {
+        margin-top: 80px;
+        height: 600px;
+
+        @include mobile {
+            margin-top: 50px;
+            height: 570px;
+        }
+    }
+
+    &__slide {
+        max-width: 379px;
+        max-height: 528px;
+
+        &-person {
+            @include flex-all-center-between;
+            margin-top: 16px;
+        }
+
+        &-name {
+            color: var(--neutral-color-100);
+            font-weight: 600;
+            line-height: 150%;
+        }
+
+        &-socials {
+            display: flex;
+            gap: 8px;
+
+            &-link {
+                & path {
+                    fill: var(--icons-color);
+                }
+            }
+        }
+
+        &-position {
+            margin-top: 8px;
+            color: var(--neutral-color-150);
+            font-weight: 500;
+            line-height: 150%;
+        }
+    }
+
+    &__bottom {
+        @include flex-all-center-between;
+        margin-top: 105px;
+
+        @include tablet {
+            flex-direction: column;
+            text-align: center;
+            gap: 30px;
+        }
+
+        &-title {
+            max-width: 626px;
+            color: var(--neutral-color-100);
+            font-weight: 600;
+            line-height: 120%;
+            letter-spacing: -2px;
+        }
+
+        &-join {
+            display: flex;
+            flex-direction: column;
+            align-items: start;
+            gap: 30px;
+
+            @include tablet {
+                align-items: center;
+            }
+        }
+
+        &-text {
+            max-width: 506px;
+            color: var(--neutral-color-150);
+            font-weight: 500;
+            line-height: 32px;
+        }
+
+        &-button {
+            display: flex;
+            background: var(--neutral-color-100);
+            width: 200px;
+            padding: 17px 22px;
+            justify-content: center;
+            align-items: center;
+
+            color: var(--neutral-color-10);
+            line-height: 24px;
+        }
+    }
+}
+
+.swiper-horizontal > .swiper-scrollbar, .swiper-scrollbar.swiper-scrollbar-horizontal {
+    height: 10px;
+    cursor: pointer;
+}

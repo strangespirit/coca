@@ -1,5 +1,8 @@
 .hero {
-    margin-bottom: 100px;
+    margin-top: 105px;
+    @include mobile {
+        margin-top: 55px;
+    }
 
     &-decor::before {
         top: 900px;
@@ -27,11 +30,9 @@
     }
 
     &__title {
-        margin-top: 105px;
         max-width: 959px;
 
         @include mobile {
-            margin-top: 55px;
             text-align: center;
         }
     }
