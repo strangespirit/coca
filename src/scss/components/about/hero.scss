@@ -2,8 +2,12 @@
     margin-bottom: 100px;
 
     &-decor::before {
-        top: 1100px;
+        top: 900px;
         left: 244px;
+    }
+
+    &-decor::after {
+        bottom: -480px;
     }
 
     &__container {
@@ -48,6 +52,10 @@
 
     &__subtitle {
         max-width: 738px;
+
+        &:before {
+            transform: translateY(-83px);
+        }
     }
 
     &__icon {
@@ -186,6 +194,40 @@
             }
         }
 
+    }
+
+    &__bottom {
+        @include flex-all-center-between;
+        margin-top: 160px;
+        border-top: 1px solid var(--neutral-color-30);
+        border-bottom: 1px solid var(--neutral-color-30);
+        padding: 80px 0;
+
+        @include mini-desktop {
+            flex-direction: column;
+            gap: 45px;
+            text-align: center;
+        }
+
+        @include mobile {
+            margin-top: 100px;
+        }
+
+        &-title {
+            max-width: 480px;
+            color: var(--neutral-color-100);
+            line-height: 120%;
+            letter-spacing: -2px;
+            font-weight: 600;
+
+        }
+
+        &-text {
+            max-width: 522px;
+            color: var(--neutral-color-100);
+            line-height: 150%;
+            font-weight: 600;
+        }
     }
 }
 

@@ -114,6 +114,8 @@
                 height: 1px;
                 background-color: var(--neutral-color-100);
                 transform: translateY(-43px);
+                flex-shrink: 0;
+                align-items: start;
 
                 @include mini-desktop {
                     display: none;
