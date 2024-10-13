@@ -131,6 +131,14 @@
             }
         }
 
+        &-big {
+            font-size: 20px;
+
+            @include mobile {
+                font-size: 17px;
+            }
+        }
+
         &-medium {
             font-size: 18px;
 
