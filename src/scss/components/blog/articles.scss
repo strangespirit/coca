@@ -1,0 +1,226 @@
+.articles {
+    margin: 160px 0;
+
+    @include mobile {
+        margin: 100px 0;
+    }
+
+    &__container {
+        padding-right: 0;
+        max-width: 1440px;
+
+        @include mini-desktop {
+            max-width: calc(var(--container-width) - (var(--container-padding) * 2));
+        }
+
+        @include tablet {
+            padding-right: var(--container-padding);
+        }
+
+        @include small-tablet {
+            justify-content: center;
+        }
+
+        @include mobile {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+    }
+
+    &__head {
+        @include flex-all-center-between;
+
+        @include mobile {
+            text-align: center;
+            flex-direction: column;
+        }
+    }
+
+    &__text {
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+
+        @include mobile {
+            gap: 14px;
+        }
+    }
+
+    &__title {
+        color: var(--neutral-color-100);
+        font-weight: 600;
+        line-height: 120%;
+        letter-spacing: -2px;
+    }
+
+    &__subtitle {
+        max-width: 435px;
+        color: var(--neutral-color-150);
+        font-weight: 500;
+        line-height: 32px;
+    }
+
+    &__nav {
+        display: flex;
+        gap: 16px;
+        margin-right: 100px;
+
+        @include mini-desktop {
+            margin-top: 100px;
+            margin-right: 50px;
+        }
+
+        @include mobile {
+            margin-top: 30px;
+            margin-right: 0px;
+        }
+    }
+
+    &__button-prev {
+        position: relative;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        background-color: var(--neutral-color-100);
+        border: 1px solid var(--border-btn);
+
+        @include mobile {
+            width: 45px;
+            height: 45px;
+        }
+
+        & svg {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+
+            @include mobile {
+                top: 14px;
+            }
+
+            & path {
+                fill: var(--neutral-color-10);
+            }
+        }
+
+        &:hover {
+            background: transparent;
+            transition: var(--transition);
+
+            & svg path {
+                fill: var(--neutral-color-100);
+            }
+        }
+    }
+
+    &__button-next {
+        position: relative;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        background-color: var(--neutral-color-100);
+        border: 1px solid var(--border-btn);
+
+        @include mobile {
+            width: 45px;
+            height: 45px;
+        }
+
+        & svg {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+
+            @include mobile {
+                top: 14px;
+                right: 13px;
+            }
+
+            & path {
+                fill: var(--neutral-color-10);
+            }
+        }
+
+        &:hover {
+            background: transparent;
+            transition: var(--transition);
+
+            & svg path {
+                fill: var(--neutral-color-100);
+            }
+        }
+    }
+
+    &__slider {
+        margin-top: 80px;
+
+        @include mobile {
+            margin-top: 40px;
+        }
+    }
+
+    &__slide {
+        display: flex;
+        flex-direction: column;
+        max-width: 476px;
+        width: auto;
+
+        @include mobile {
+            max-width: 360px;
+        }
+
+        &-title {
+            max-width: 407px;
+            margin-top: 24px;
+            color: var(--neutral-color-100);
+            font-weight: 600;
+            line-height: 42px;
+            letter-spacing: -1px;
+        }
+
+        &-text {
+            max-width: 403px;
+            margin-top: 16px;
+            color: var(--neutral-color-150);
+            font-weight: 500;
+            line-height: 32px;
+        }
+
+        &-button {
+            margin-top: 24px;
+            border-radius: 100px;
+            border: 1px solid var(--neutral-color-40);
+            max-width: 175px;
+            padding: 16px 32px;
+            background-color: transparent;
+
+            color: var(--neutral-color-100);
+            font-weight: 700;
+            line-height: 24px;
+
+            &:hover {
+                background-color: var(--neutral-color-100);
+                color: var(--neutral-color-10);
+                transition: var(--transition);
+            }
+        }
+    }
+}
+
+.swiper-button-disabled.articles__button-prev,
+.swiper-button-disabled.articles__button-next {
+    background-color: var(--disabled-btn);
+    border: 1px solid #CED1D8;
+    cursor: auto;
+}
+
+.swiper-button-disabled.articles__button-prev svg path,
+.swiper-button-disabled.articles__button-next svg path {
+    fill: var(--disabled-arrow);
+}
+
+.swiper-button-disabled.articles__button-prev:HOVER svg path,
+.swiper-button-disabled.articles__button-next:HOVER svg path {
+    fill: var(--disabled-arrow);
+}

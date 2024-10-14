@@ -27,6 +27,11 @@
     // bg colors
     --black-bg-color: #1d1e25;
 
+    // buttons colors
+    --border-btn: #1d1e25;
+    --disabled-btn: #fff;
+    --disabled-arrow: #CED1D8;
+
     // container
     --container-padding: 15px;
     --container-width: 1200px;
@@ -63,4 +68,7 @@
     --logo-color-circle: #343542;
     --icons-color: #fff;
     --black-bg-color: #18181d;
+    --border-btn: #CED1D8;
+    --disabled-btn: #CED1D8;
+    --disabled-arrow: #1d1e25;
 }
