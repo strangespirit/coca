@@ -182,7 +182,7 @@
             color: var(--neutral-color-100);
 
             &--popular {
-                color: #fff;
+                color: var(--neutral-color-10);
             }
 
             &-text {
@@ -191,7 +191,7 @@
                 color: var(--neutral-color-150);
 
                 &--popular {
-                    color: #fff;
+                    color: var(--neutral-color-10);
                 }
             }
         }
@@ -206,7 +206,7 @@
                 color: var(--neutral-color-100);
 
                 &--popular {
-                    color: #fff;
+                    color: var(--neutral-color-10);
                 }
             }
         }
@@ -231,7 +231,7 @@
             }
 
             &--popular {
-                color: #fff;
+                color: var(--neutral-color-10);
             }
 
             &--inaccess {
